@@ -18,7 +18,7 @@ cd "$GITHUB_WORKSPACE" || exit 2
 exit_code=0
 
 # Find files
-FILES=$(find src -path src/out -prune -o -path src/utils -prune -o -name \*.h -print -o -name \*.cpp  -print)
+FILES=$(find src modules/smop_shell/src -path src/out -prune -o -path src/utils -prune -o -name \*.h -print -o -name \*.cpp  -print)
 
 # Сheck style in files
 for FILE in $FILES; do
