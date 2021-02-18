@@ -2,7 +2,7 @@
 
 format_diff(){
     local filepath="$1"
-    local_format="$(/usr/bin/clang-format-10 -n --Werror --style=file --fallback-style=LLVM "${filepath}")"
+    local_format="$(/usr/bin/clang-format-11 -n --Werror --style=file --fallback-style=LLVM "${filepath}")"
     local format_status="$?"
     if [[ "${format_status}" -ne 0 ]]; then
         echo "$local_format" >&2
