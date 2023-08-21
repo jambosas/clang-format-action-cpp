@@ -11,17 +11,19 @@ format_diff(){
     fi
     return 0
 }
-
+echo "one"
 cd "$GITHUB_WORKSPACE" || exit 2
-
+echo "two"
 # initialize exit code
 exit_code=0
-
+echo "three"
 # Find files
 FILES=$(find src -path src/out -prune -o -path src/utils -prune -o -name \*.h -print -o -name \*.cpp  -print)
-
+echo "four"
+echo $FILES
 # Сheck style in files
 for FILE in $FILES; do
+    echo "${FILE}"
     format_diff "${FILE}"
 done
 
