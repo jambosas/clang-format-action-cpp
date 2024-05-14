@@ -36,7 +36,7 @@ def verify_code_style(filepath):
 
         if format_output.returncode != 0:
             logging.error(f"Formatting issue found in {filepath}:")
-            # logging.error(format_output.stderr)
+            logging.error(format_output.stderr)
             return 1
 
         logging.info(f"No formatting issues found in {filepath}.")
