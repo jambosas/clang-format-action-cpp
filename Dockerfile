@@ -1,5 +1,5 @@
 # Use a specific version of Ubuntu to ensure consistent behavior
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Install clang-format and Python
 RUN apt-get update && \
