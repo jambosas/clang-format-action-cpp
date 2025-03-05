@@ -17,12 +17,12 @@ def check_clang_format():
     global actual_clang_format_path
 
     # Check if clang-format is in system PATH
-    actual_clang_format_path = shutil.which("clang-format-11") or "/usr/bin/clang-format-11"
+    actual_clang_format_path = shutil.which("clang-format") or "/usr/bin/clang-format"
 
     if os.path.isfile(actual_clang_format_path):
-        logging.info(f"clang-format-11 found at {actual_clang_format_path}")
+        logging.info(f"clang-format found at {actual_clang_format_path}")
     else:
-        logging.error("clang-format-11 not found in the system PATH or the expected path, please install it.")
+        logging.error("clang-format not found in the system PATH or the expected path, please install it.")
         exit(3)
 
 
