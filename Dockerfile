@@ -1,5 +1,6 @@
 # Use a specific version of Ubuntu to ensure consistent behavior
-FROM ubuntu:22.04
+# use LTS Ubuntu 24.04 LTS (Noble Numbat),
+FROM ubuntu:24.04
 
 # Install clang-format and Python
 RUN apt-get update && \
