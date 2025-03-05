@@ -6,7 +6,7 @@ FROM ubuntu:24.04
 # Install clang-format-11 and Python
 RUN  apt-get update && \
   apt-get install -y curl gpg
-RUN echo "deb https://apt.llvm.org/noble/ llvm-toolchain-noble-20 main" |  tee /etc/apt/sources.list.d/llvm.list
+RUN echo "deb https://apt.llvm.org/noble/ llvm-toolchain-noble-19 main" |  tee /etc/apt/sources.list.d/llvm.list
 RUN curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
 
 RUN curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor |  tee /etc/apt/keyrings/repo-key.gpg
@@ -15,7 +15,7 @@ RUN ls -l /etc/apt/keyrings/repo-key.gpg
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends clang-format-20 python3 && \
+    apt-get install -y --no-install-recommends clang-format-19 python3 && \
     # Clean up to reduce image size
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
