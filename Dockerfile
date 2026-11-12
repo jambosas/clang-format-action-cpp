@@ -2,7 +2,12 @@
 # use LTS Ubuntu 24.04 LTS (Noble Numbat),
 FROM ubuntu:24.04
 
-
+RUN cat /etc/resolv.conf && \
+    getent hosts archive.ubuntu.com && \
+    getent hosts security.ubuntu.com && \
+    apt-get update && \
+    apt-get install -y curl gpg
+    
 # Install clang-format-11 and Python
 RUN  apt-get update && \
   apt-get install -y curl gpg
